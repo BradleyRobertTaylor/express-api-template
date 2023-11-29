@@ -13,8 +13,8 @@ This is just a simple Express boilerplate setup with the following:
 To use this clone the repo and remove the git files in order to make it yours
 
 ```
-git clone
-cd
+git clone https://github.com/BradleyRobertTaylor/express-api-template.git
+cd express-api-template
 rm -rf .git
 ```
 
