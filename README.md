@@ -2,26 +2,16 @@
 
 This is just my minimal Express boilerplate setup with the following:
 
-- [express](https://www.npmjs.com/package/express)
-  - Express is an unopinionated web framework for Node.js
-- [typescript](https://www.npmjs.com/package/typescript)
-  - TypeScript is a typed programming language that builds on JavaScript, giving better tooling at any scale
-- [dotenv](https://www.npmjs.com/package/dotenv)
-  - Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
-- [cors](https://www.npmjs.com/package/cors)
-  - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options
-- [ts-node](https://www.npmjs.com/package/ts-node)
-  - TypeScript execution and REPL for node.js, with source map and native ESM support
-- [nodemon](https://www.npmjs.com/package/nodemon)
-  - nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected
-- [eslint](https://www.npmjs.com/package/eslint)
-  - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-- [typescript-eslint](https://typescript-eslint.io/)
-  - Tooling which enables ESLint to support TypeScript
-- [jest](https://www.npmjs.com/package/jest)
-  - Jest is a JavaScript Testing Framework with a focus on simplicity
-- [supertest](https://www.npmjs.com/package/supertest)
-  - HTTP assertions made easy via superagent
+- [Express](https://www.npmjs.com/package/express) is an unopinionated web framework for Node.js
+- [TypeScript](https://www.npmjs.com/package/typescript) is a typed programming language that builds on JavaScript, giving better tooling at any scale
+- [Dotenv](https://www.npmjs.com/package/dotenv) is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
+- [CORS](https://www.npmjs.com/package/cors) is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options
+- [ts-node](https://www.npmjs.com/package/ts-node) is a execution and REPL for node.js, with source map and native ESM support
+- [Nodemon](https://www.npmjs.com/package/nodemon) is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected
+- [ESLint](https://www.npmjs.com/package/eslint) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
+- [TypeScriptESLint](https://typescript-eslint.io/) enables ESLint to support TypeScript
+- [Jest](https://www.npmjs.com/package/jest) is a JavaScript Testing Framework with a focus on simplicity
+- [Supertest](https://www.npmjs.com/package/supertest) is a SuperAgent driven library for testing HTTP servers
 
 ## Setup
 
@@ -57,13 +47,13 @@ npm run test
 npm run dev
 ```
 
-### Build to dist folder
+### Compile
 
 ```
 npm run build
 ```
 
-### Run built JavaScript
+### Run Compiled Code
 
 ```
 npm start
@@ -101,7 +91,7 @@ package.json
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/server.ts"
   }
 }
 ```
@@ -123,7 +113,7 @@ package.json
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/server.ts",
     "build": "tsc"
   }
 }
@@ -141,7 +131,7 @@ package.json
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/server.ts",
     "build": "tsc",
     "test": "jest"
   }
@@ -171,8 +161,8 @@ package.json
 ```json
 {
   "scripts": {
-    "start": "node dist/src/index.js",
-    "dev": "nodemon src/index.ts",
+    "start": "node dist/src/server.js",
+    "dev": "nodemon src/server.ts",
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "test": "jest"
