@@ -2,10 +2,10 @@
   "name": "express-api-template",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "node dist/src/index.js",
-    "dev": "nodemon src/index.ts",
+    "start": "node dist/src/server.js",
+    "dev": "nodemon src/server.ts",
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "test": "jest"

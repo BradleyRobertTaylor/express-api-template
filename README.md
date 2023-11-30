@@ -1,14 +1,29 @@
-# Simple Express Boilerplate for TypeScript API
+# Minimal Express Boilerplate for TypeScript API
 
-This is just a simple Express boilerplate setup with the following:
+This is just my minimal Express boilerplate setup with the following:
 
-- TypeScript
-- Express
-  - Cors middleware
-  - dotenv for loading environment variables (will no longer need after Node 20.6.0)
-- Jest for testing
-- ESLint for linting
-- Nodemon with ts-node for file reload during development
+- [express](https://www.npmjs.com/package/express)
+  - Express is an unopinionated web framework for Node.js
+- [typescript](https://www.npmjs.com/package/typescript)
+  - TypeScript is a typed programming language that builds on JavaScript, giving better tooling at any scale
+- [dotenv](https://www.npmjs.com/package/dotenv)
+  - Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
+- [cors](https://www.npmjs.com/package/cors)
+  - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options
+- [ts-node](https://www.npmjs.com/package/ts-node)
+  - TypeScript execution and REPL for node.js, with source map and native ESM support
+- [nodemon](https://www.npmjs.com/package/nodemon)
+  - nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected
+- [eslint](https://www.npmjs.com/package/eslint)
+  - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
+- [typescript-eslint](https://typescript-eslint.io/)
+  - Tooling which enables ESLint to support TypeScript
+- [jest](https://www.npmjs.com/package/jest)
+  - Jest is a JavaScript Testing Framework with a focus on simplicity
+- [supertest](https://www.npmjs.com/package/supertest)
+  - HTTP assertions made easy via superagent
+
+## Setup
 
 To use this clone the repo and remove the git files in order to make it yours
 
@@ -16,6 +31,42 @@ To use this clone the repo and remove the git files in order to make it yours
 git clone https://github.com/BradleyRobertTaylor/express-api-template.git
 cd express-api-template
 rm -rf .git
+```
+
+### Install Dependencies
+
+```
+npm install
+```
+
+### Lint
+
+```
+npm run lint
+```
+
+### Test
+
+```
+npm run test
+```
+
+### Development
+
+```
+npm run dev
+```
+
+### Build to dist folder
+
+```
+npm run build
+```
+
+### Run built JavaScript
+
+```
+npm start
 ```
 
 ## How to get this configuration from scratch
@@ -45,8 +96,9 @@ npm i -D @types/express @types/cors
 npm i -D nodemon ts-node
 ```
 
+package.json
+
 ```json
-// package.json
 {
   "scripts": {
     "dev": "nodemon src/index.ts"
@@ -56,8 +108,9 @@ npm i -D nodemon ts-node
 
 5. Create a file `tsconfig.json` in root directory and copy from my tsconfig or run `tsc --init` to use the default configuration. If using the default configuration make sure to uncomment `outDir` and set it to `./dist` in the `compilerOptions`
 
+tsconfig.json
+
 ```json
-// tsconfig.json
 {
   "compilerOptions": {
     "outDir": "./dist"
@@ -65,8 +118,9 @@ npm i -D nodemon ts-node
 }
 ```
 
+package.json
+
 ```json
-// package.json
 {
   "scripts": {
     "dev": "nodemon src/index.ts",
@@ -82,8 +136,9 @@ npm i -D jest ts-jest @types/jest
 npx ts-jest config:init
 ```
 
+package.json
+
 ```json
-// package.json
 {
   "scripts": {
     "dev": "nodemon src/index.ts",
@@ -111,8 +166,9 @@ module.exports = {
 };
 ```
 
+package.json
+
 ```json
-// package.json
 {
   "scripts": {
     "start": "node dist/src/index.js",
@@ -123,5 +179,3 @@ module.exports = {
   }
 }
 ```
-
-8. Optionally create a .prettierrc file in the root directory and populate it with whatever configurations you would want

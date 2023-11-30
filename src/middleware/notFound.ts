@@ -1,7 +1,11 @@
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, RequestHandler, Response } from 'express';
+import { HttpError } from '../models/httpError';
 
-export const notFound = (req: Request, res: Response, next: NextFunction) => {
+export const notFound: RequestHandler = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   res.status(404);
-  const error = new Error('404 Not found.');
-  next(error);
+  next(new HttpError('404 Not found.'));
 };
