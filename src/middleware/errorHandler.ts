@@ -3,11 +3,11 @@ import { ErrorResponse } from '../types';
 
 export const errorHandler: ErrorRequestHandler = (
   err: Error,
-  req: Request,
+  _req: Request,
   res: Response<ErrorResponse>,
-  next: NextFunction,
+  _next: NextFunction,
 ) => {
   const statusCode = res.statusCode || 500;
   res.status(statusCode);
-  res.json({ message: err.message || 'An unknown error occurred!' });
+  res.json({ error: err.message || 'An unknown error occurred!' });
 };

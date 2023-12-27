@@ -1,10 +1,11 @@
 import app from './app';
-import { PORT } from './config';
+import { envVariables } from './env';
 
-async function startServer() {
+const startServer = () => {
+  const PORT = envVariables.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`App listening at http://localhost:${PORT}`);
   });
-}
+};
 
 startServer();
